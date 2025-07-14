@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head><title>Add Student</title></head>
+<body>
+    <h2>Add New Student</h2>
+    <form method="POST">
+        Name: <input type="text" name="name" required><br>
+        Courses:<br>
+        {% for course in courses %}
+            <input type="checkbox" name="courses" value="{{ course._id }}">
+            {{ course.name }}<br>
+        {% endfor %}
+        <button type="submit">Add</button>
+    </form>
+</body>
+</html>

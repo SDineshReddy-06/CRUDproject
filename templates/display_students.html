@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head><title>Students</title></head>
+<body>
+    <h2>Students & Enrolled Courses</h2>
+    <a href="/addStudent">Add Student</a>
+    <ul>
+        {% for s in students %}
+            <li>
+                <b>{{ s.name }}</b> enrolled in:
+                {{ s.course_ids | join(', ') if s.course_ids else 'No courses' }}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
